@@ -7,8 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Test;
 
-import java.nio.channels.SeekableByteChannel;
-
 /**
  * Created by Administrator on 2016/9/23 0023.
  */
@@ -19,11 +17,11 @@ public class EmployeeDaoTest {
         Transaction transaction = session.getTransaction();
         Employee employee = new Employee();
         employee.setId(2L);
-        Employee employee1 = session.load(Employee.class, 2L);
+        Employee employee1 = session.get(Employee.class, 2L);
         System.out.println(employee1.getId());
-        //System.out.println(employee1.getDepartment());
+        System.out.println(employee1.getDepartment());
         session.close();
-        //System.out.println(employee1.getDepartment());
+        System.out.println(employee1.getDepartment());
     }
 
     @Test
